@@ -132,6 +132,50 @@
     </p>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- Floating WhatsApp Button -->
+  <button class="whatsapp-float" id="whatsapp-button">
+    <!-- Inline SVG Icon for WhatsApp -->
+    <svg viewBox="0 0 32 32" fill="currentColor">
+      <path d="M16 .6c-8.437 0-15.3 6.863-15.3 15.3 0 2.696.706 5.317 2.046 7.612l-2.236 8.172 8.376-2.192c2.223 1.182 4.735 1.806 7.114 1.806h.001c8.437 0 15.3-6.863 15.3-15.3 0-4.077-1.588-7.909-4.474-10.786-2.887-2.887-6.709-4.474-10.786-4.474zm8.995 23.525c-.372 1.051-2.196 2.051-3.055 2.183-.859.132-1.695.065-2.514-.074-.554-.104-1.275-.415-2.186-.811-3.852-1.68-6.367-5.582-6.563-5.84-.196-.258-1.562-2.077-1.562-3.968 0-1.891.985-2.824 1.332-3.201.347-.378.765-.47 1.02-.47.255 0 .51.002.734.013.238.011.554-.089.866.66.311.749 1.058 2.584 1.149 2.773.09.189.149.413.028.67-.12.258-.179.413-.357.623-.179.21-.379.47-.54.63-.179.179-.365.374-.157.733.209.358.931 1.528 2.006 2.474 1.379 1.22 2.537 1.605 2.894 1.785.358.179.567.149.776-.089.209-.238.894-1.042 1.132-1.398.238-.357.476-.298.795-.179.318.119 2.041.963 2.39 1.139.349.179.582.268.67.417.089.149.089.86-.283 1.911z"/>
+    </svg>
+    WhatsApp
+  </button>
+
+  <!-- WhatsApp-like Chat Box -->
+  <div class="whatsapp-chat-box" id="whatsapp-chat-box">
+    <div class="whatsapp-header">
+      <div class="company-name">Elegant Exterior Cleaning</div>
+      <div class="availability">Available 7 Days a Week</div>
+      <span class="close-chat" id="close-chat">&times;</span>
+    </div>
+    <div class="whatsapp-body">
+      <div class="message">
+        <p>Hi 👋</p>
+        <p>Need a quote or have a question? We’re here to help!</p>
+      </div>
+      <button class="chat-button" id="start-chat">Chat on WhatsApp</button>
+    </div>
+  </div>
+
+  <script>
+    const whatsappButton = document.getElementById('whatsapp-button');
+    const whatsappChatBox = document.getElementById('whatsapp-chat-box');
+    const closeChat = document.getElementById('close-chat');
+    const startChat = document.getElementById('start-chat');
+
+    whatsappButton.addEventListener('click', () => {
+      whatsappChatBox.style.display = 'block';
+    });
+
+    closeChat.addEventListener('click', () => {
+      whatsappChatBox.style.display = 'none';
+    });
+
+    startChat.addEventListener('click', () => {
+      const phoneNumber = '16043682042';
+      const url = `https://wa.me/${phoneNumber}?text=Hello%2C%20I%20need%20assistance`;
+      window.open(url, '_blank');
+    });
+  </script>
 </body>
 </html>
